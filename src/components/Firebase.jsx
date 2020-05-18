@@ -1,23 +1,9 @@
 import React from "react";
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
 import { Button } from "@material-ui/core";
+import firebase from "./FirebaseInit";
 
 export default function Firebase() {
-	var firebaseConfig = {
-		apiKey: "AIzaSyCIqA3zZDQ2dM-BB7ENp9WT-McHaU3Wmi0",
-		authDomain: "agroblockstest-1583987257159.firebaseapp.com",
-		databaseURL: "https://agroblockstest-1583987257159.firebaseio.com",
-		projectId: "agroblockstest-1583987257159",
-		storageBucket: "agroblockstest-1583987257159.appspot.com",
-		messagingSenderId: "260182571193",
-		appId: "1:260182571193:web:42fdd184c9614ef0cc4368",
-		measurementId: "G-RP33GJJCF3",
-	};
-	firebase.initializeApp(firebaseConfig);
 	var provider = new firebase.auth.GoogleAuthProvider();
-	// provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
 	const signIn = () => {
 		firebase
 			.auth()
@@ -53,10 +39,7 @@ export default function Firebase() {
 	};
 	return (
 		<div>
-			<Button onClick={signOut} style={{ marginTop: "5rem" }}>
-				SignOut
-			</Button>
-			<Button onClick={signIn}>SignIn</Button>
+			<Button onClick={signIn}>signin</Button>
 		</div>
 	);
 }
