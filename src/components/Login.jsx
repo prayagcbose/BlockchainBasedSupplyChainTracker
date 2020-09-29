@@ -3,6 +3,8 @@ import { Grid, Button } from "@material-ui/core";
 import useStyles from "./style";
 import { Link, Redirect } from "react-router-dom";
 import firebase from "./FirebaseInit";
+import NavBar from "./NavBar";
+import { FcGoogle } from "react-icons/fc";
 
 //firebase
 
@@ -19,6 +21,7 @@ export default function Login() {
 				var token = result.credential.accessToken;
 				// The signed-in user info.
 				var user = result.user;
+				console.log(user);
 				setLoggedIn(true);
 			})
 			.catch(function (error) {
@@ -50,6 +53,7 @@ export default function Login() {
 	}
 	return (
 		<div className={classes.root}>
+			<NavBar></NavBar>
 			<Grid container className={classes.bg}>
 				<Grid item sm={6}>
 					<Grid item className={classes.cont1}>
@@ -62,7 +66,15 @@ export default function Login() {
 					</Grid>
 				</Grid>
 				<Grid item sm={6} className={classes.googleBtn}>
-					<Button onClick={signIn}>Sign in</Button>
+					<Button
+						onClick={signIn}
+						style={{ color: "white", textTransform: "none" }}
+						color="secondary"
+						variant="outlined"
+					>
+						<FcGoogle size="1.5rem" style={{ marginRight: "5px" }} />
+						Google-Login
+					</Button>
 				</Grid>
 			</Grid>
 		</div>

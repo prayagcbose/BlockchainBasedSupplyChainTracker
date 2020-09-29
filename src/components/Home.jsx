@@ -10,6 +10,7 @@ export default function Home() {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
+			<NavBar></NavBar>
 			<Grid container className={classes.bg}>
 				<Grid item sm={6}>
 					<Grid item className={classes.cont1}>

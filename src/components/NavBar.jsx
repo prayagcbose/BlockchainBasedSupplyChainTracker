@@ -26,6 +26,7 @@ const useStyles = makeStyles({
 });
 export default function NavBar() {
 	const classes = useStyles();
+
 	return (
 		<AppBar position="static" color="primary" style={{ padding: "0 5%" }}>
 			<Toolbar>
